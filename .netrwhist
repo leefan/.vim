@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/usr/share/config/kdm'
 let g:netrw_dirhist_2='/root/.wine/drive_c'
 let g:netrw_dirhist_3='/root/.vim'
 let g:netrw_dirhist_4='/root/.config/fish'
+let g:netrw_dirhist_5='/home/lfa221/eecs362/topalu'
+let g:netrw_dirhist_6='/home/lfa221/eecs362/instrfetch'
+let g:netrw_dirhist_7='/home/lfa221/eecs362/decoder'
+let g:netrw_dirhist_8='/home/lfa221/eecs340-project2'

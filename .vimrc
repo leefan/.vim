@@ -15,3 +15,6 @@ inoremap <silent><F11> <Esc>:RainbowParenthesesToggle<cr>a
 set bg=dark
 syn on
 
+set expandtab
+set tabstop=4
+set shiftwidth=4
