@@ -1,3 +1,9 @@
+set nocompatible
+
+" Pathogen plugin manager
+call pathogen#helptags()
+call pathogen#infect()
+
 " toggle highlighting search with F12
 nnoremap <silent><F12> :set hls!<cr>
 inoremap <silent><F12> <Esc>:set hls!<cr>a
@@ -12,16 +18,44 @@ nnoremap <silent>? :set hls<cr>?
 nnoremap <silent><F11> :RainbowParenthesesToggle<cr>
 inoremap <silent><F11> <Esc>:RainbowParenthesesToggle<cr>a
 
-set bg=dark
-syn on
+" Disable Help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
+" Basic Options
+set bg=dark
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set smarttab
 set backspace=indent,eol,start
-
 set number
+set showmatch
+set ignorecase
+set smartcase
+set incsearch
+set title
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set laststatus=2
+set wildmode=list:longest
+" set autoindent
+
 
 " syntax
 filetype plugin indent on
 syntax on
+
+" Control
+nnoremap j gj
+nnoremap k gk
+
+" sudo and save with w!!
+cmap w!! w !sudo tee % >/dev/null
