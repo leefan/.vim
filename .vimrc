@@ -45,7 +45,7 @@ set ttyfast
 set ruler
 set laststatus=2
 set wildmode=list:longest
-" set autoindent
+set autoindent
 
 
 " syntax
