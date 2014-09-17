@@ -41,7 +41,6 @@ set showcmd
 set hidden
 set wildmenu
 set visualbell
-set cursorline
 set ttyfast
 set ruler
 set laststatus=2
