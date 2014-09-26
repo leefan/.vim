@@ -24,6 +24,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Basic Options
+set shell=bash
 set bg=dark
 set expandtab
 set tabstop=4
