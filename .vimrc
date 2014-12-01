@@ -47,7 +47,13 @@ set ruler
 set laststatus=2
 set wildmode=list:longest
 set autoindent
+set fdm=indent
 
+" relativenumbers
+autocmd FocusLost * :set norelativenumber
+autocmd FocusGained * :set relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " syntax
 filetype plugin indent on
