@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Applications/MAMP/bin/php/php5.5.14'
-let g:netrw_dirhist_2='/Applications/MAMP/htdocs/contentMachine/views/javascript/shmoop'
-let g:netrw_dirhist_3='/Applications/MAMP/htdocs/contentMachine/views/javascript/shmoop/objects'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Applications/MAMP/htdocs/code/managers/college/urlGeneration'
+let g:netrw_dirhist_2='/Applications/MAMP/htdocs/code/managers/college/urlGeneration/output'
+let g:netrw_dirhist_3='/Applications/MAMP/htdocs/code/managers/college/urlGeneration'
+let g:netrw_dirhist_4='/Applications/MAMP/htdocs/code/controllers/essay-lab'
+let g:netrw_dirhist_5='/usr/local/Cellar/dsh/0.25.9/etc'
+let g:netrw_dirhist_6='/Users/leefan/.oh-my-fish'
+let g:netrw_dirhist_7='/Users/leefan/Shmoop/htdocs/httpdocs/contentMachine/include/model/object'

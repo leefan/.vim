@@ -9,10 +9,10 @@
 	url = https://github.com/esneider/YUNOcommit.vim.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-fish"]
 	path = bundle/vim-fish
-	url = git@github.com:dag/vim-fish.git
+	url = https://github.com/dag/vim-fish.git
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
-	url = git@github.com:Lokaltog/vim-powerline.git
+	url = https://github.com/Lokaltog/vim-powerline.git
