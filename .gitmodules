@@ -13,15 +13,15 @@
 [submodule "bundle/vim-fish"]
 	path = bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "bundle/indentLine"]
-	path = bundle/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
-[submodule "bundle/powerline"]
-	path = bundle/powerline
-	url = https://github.com/powerline/powerline.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "/Users/leefan/.vim/bundle/vim-javascript"]
+	path = /Users/leefan/.vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "bundle/indentLine"]
+	path = bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git

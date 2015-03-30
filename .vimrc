@@ -69,3 +69,6 @@ cmap w!! w !sudo tee % >/dev/null
 " Bundle Settings
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
+
+nnoremap <silent><F2> :GitGutterToggle<cr>
+inoremap <silent><F2> <Esc> :GitGutterToggle<cr>a
