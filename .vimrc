@@ -65,3 +65,6 @@ nnoremap k gk
 
 " sudo and save with w!!
 cmap w!! w !sudo tee % >/dev/null
+
+" Bundle Settings
+let g:airline_powerline_fonts = 1
