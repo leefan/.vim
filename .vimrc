@@ -68,3 +68,4 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Bundle Settings
 let g:airline_powerline_fonts = 1
+let g:airline_theme='molokai'
