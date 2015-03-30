@@ -1,4 +1,8 @@
 #! /bin/sh
-git submodule update --init --recursive
-git submodule foreach git checkout master
-git submodule foreach git pull
+cd ~/.vim && git pull --rebase origin/master
+
+cd ~/.vim && git submodule update --init --recursive
+cd ~/.vim && git submodule foreach git checkout master
+cd ~/.vim && git submodule foreach git pull
+
+cd ~/.vim/bundle/vimproc.vim && make
