@@ -20,32 +20,32 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Basic Options
-set shell=bash
-set bg=dark
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set backspace=indent,eol,start
-set number
-set showmatch
-set ignorecase
-set smartcase
-set incsearch
-set title
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set visualbell
-set ttyfast
-set ruler
-set laststatus=2
-set wildmode=list:longest
-set autoindent
-set fdm=indent
+set shell=bash                      " set internal shell to bash
+set bg=dark                         " use dark style
+set expandtab                       " inserts space characters instead of tab
+set tabstop=4                       " show tab as 4 spaces
+set shiftwidth=4                    " inserts 4 space characters for tab
+set smarttab                        " Use 'shiftwidth' to insert tabs, <BS> removes a tab's worth
+set backspace=indent,eol,start      " allows backspacing over indent, line breaks, and start of inserts
+set number                          " show line number
+set showmatch                       " show matching bracket
+set ignorecase                      " ignore case during search
+set smartcase                       " override 'ignorecase' when an upper case character is in search pattern
+set incsearch                       " search while typing
+set title                           " set terminal title to 'titlestring' or filename
+set showmode                        " indicate which mode vim is in at the bottom
+set showcmd                         " show command at the bottom
+set hidden                          " when buffer is abandoned make it hidden - basically, lets you switch the buffer without saving
+set wildmenu                        " enhanced-mode for command line completion
+set visualbell                      " use a visual bell instead of beeping
+set ttyfast                         " indicates fast terminal connection. makes things smoother.
+set ruler                           " show line and column number of cursor position in bottom right
+set laststatus=2                    " show status menu for all windows
+set wildmode=list:longest           " When more than one match with tab completion, list all matches and complete till longest common string
+set autoindent                      " automatically indents. pretty straight forward
+set fdm=indent                      " set folding to base off of indentation
 
-" Relativenumbers
+" Relative Numbering
 autocmd FocusLost * :set norelativenumber
 autocmd FocusGained * :set relativenumber
 autocmd InsertEnter * :set norelativenumber
