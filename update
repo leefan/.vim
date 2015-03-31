@@ -6,3 +6,4 @@ cd ~/.vim && git submodule foreach git checkout master
 cd ~/.vim && git submodule foreach git pull
 
 cd ~/.vim/bundle/vimproc.vim && make
+cd ~/.vim/bundle/YouCompleteMe && ./install.sh
