@@ -1,6 +1,6 @@
 set nocompatible
 
-" Pathogen plugin manager
+" Pathogen
 call pathogen#helptags()
 call pathogen#infect()
 
@@ -13,10 +13,6 @@ nnoremap <silent>* :set hls<cr>*
 nnoremap <silent># :set hls<cr>#
 nnoremap <silent>/ :set hls<cr>/
 nnoremap <silent>? :set hls<cr>?
-
-" toggle rainbow parenthesis with F11
-nnoremap <silent><F11> :RainbowParenthesesToggle<cr>
-inoremap <silent><F11> <Esc>:RainbowParenthesesToggle<cr>a
 
 " Disable Help
 inoremap <F1> <ESC>
@@ -49,15 +45,18 @@ set wildmode=list:longest
 set autoindent
 set fdm=indent
 
-" relativenumbers
+" Relativenumbers
 autocmd FocusLost * :set norelativenumber
 autocmd FocusGained * :set relativenumber
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-" syntax
+" Syntax
 filetype plugin indent on
 syntax on
+
+" Color Options
+highlight Pmenu ctermfg=2 ctermbg=3 guifg=#ffffff guibg=#0000ff
 
 " Control
 nnoremap j gj
@@ -72,3 +71,6 @@ let g:airline_theme='molokai'
 
 nnoremap <silent><F2> :GitGutterToggle<cr>
 inoremap <silent><F2> <Esc> :GitGutterToggle<cr>a
+
+nnoremap <silent><F11> :RainbowParenthesesToggle<cr>
+inoremap <silent><F11> <Esc>:RainbowParenthesesToggle<cr>a
