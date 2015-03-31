@@ -56,7 +56,7 @@ filetype plugin indent on
 syntax on
 
 " Color Options
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#ffffff guibg=#0000ff
+highlight Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
 
 " Control
 nnoremap j gj
