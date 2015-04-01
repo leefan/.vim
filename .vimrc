@@ -69,8 +69,8 @@ cmap w!! w !sudo tee % >/dev/null
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 
-nnoremap <silent><F2> :GitGutterToggle<cr>
-inoremap <silent><F2> <Esc> :GitGutterToggle<cr>a
+nnoremap <silent><F2> :GitGutterLineHightlightsToggle<cr>
+inoremap <silent><F2> <Esc> :GitGutterLineHightlightsToggle<cr>a
 
 nnoremap <silent><F11> :RainbowParenthesesToggle<cr>
 inoremap <silent><F11> <Esc>:RainbowParenthesesToggle<cr>a
