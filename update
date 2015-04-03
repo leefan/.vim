@@ -1,9 +1,14 @@
 #! /bin/sh
+
 cd ~/.vim && git pull --rebase origin/master
 
-cd ~/.vim && git submodule update --init --recursive
-cd ~/.vim && git submodule foreach git checkout master
-cd ~/.vim && git submodule foreach git pull
+if ["$1" != "basic"]; then
+    cd ~/.vim && git submodule update --init --recursive
+    cd ~/.vim && git submodule foreach git checkout master
+    cd ~/.vim && git submodule foreach git pull
+fi
 
-cd ~/.vim/bundle/vimproc.vim && make
-cd ~/.vim/bundle/YouCompleteMe && ./install.sh
+if ["$1" = "install"]; then
+    cd ~/.vim/bundle/vimproc.vim && make
+    cd ~/.vim/bundle/YouCompleteMe && ./install.sh
+fi

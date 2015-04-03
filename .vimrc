@@ -46,10 +46,12 @@ set autoindent                      " automatically indents. pretty straight for
 set fdm=indent                      " set folding to base off of indentation
 
 " Relative Numbering
-autocmd FocusLost * :set norelativenumber
-autocmd FocusGained * :set relativenumber
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+if exists('+relativenumber')
+    autocmd FocusLost * :set norelativenumber
+    autocmd FocusGained * :set relativenumber
+    autocmd InsertEnter * :set norelativenumber
+    autocmd InsertLeave * :set relativenumber
+endif
 
 " Syntax
 filetype plugin indent on
