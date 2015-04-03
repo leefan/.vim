@@ -69,6 +69,10 @@ cmap w!! w !sudo tee % >/dev/null
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
 nnoremap <silent><F2> :GitGutterLineHightlightsToggle<cr>
 inoremap <silent><F2> <Esc> :GitGutterLineHightlightsToggle<cr>a
 
