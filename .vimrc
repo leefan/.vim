@@ -1,6 +1,11 @@
 set nocompatible
 
 " Pathogen
+let g:pathogen_disabled = []
+if v:version < '703'
+    call add(g:pathogen_disabled, 'YouCompleteMe')
+    call add(g:pathogen_disabled, 'vimshell.vim')
+endif
 call pathogen#helptags()
 call pathogen#infect()
 
