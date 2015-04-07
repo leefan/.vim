@@ -6,6 +6,7 @@ let g:pathogen_disabled = []
 if v:version < '703'
     call add(g:pathogen_disabled, 'YouCompleteMe')
     call add(g:pathogen_disabled, 'vimshell.vim')
+    call add(g:pathogen_disabled, 'gundo.vim')
 endif
 call pathogen#helptags()
 call pathogen#infect()
@@ -83,8 +84,11 @@ if executable('ag')
 endif
 
 nnoremap <silent><F2> :GitGutterLineHightlightsToggle<cr>
-inoremap <silent><F2> <Esc> :GitGutterLineHightlightsToggle<cr>a
+inoremap <silent><F2> <Esc>:GitGutterLineHightlightsToggle<cr>a
 
 let g:rainbow_active = 0
 nnoremap <silent><F11> :RainbowToggle<cr>
 inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
+
+nnoremap <F5> :GundoToggle<CR>
+inoremap <F5> <Esc>:GundoToggle<CR>
