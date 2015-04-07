@@ -49,8 +49,9 @@ set ruler                           " show line and column number of cursor posi
 set laststatus=2                    " show status menu for all windows
 set wildmode=list:longest           " When more than one match with tab completion, list all matches and complete till longest common string
 set autoindent                      " automatically indents. pretty straight forward
-set fdm=indent                      " set folding to base off of indentation
+set fdm=syntax                      " set folding to base off of syntax
 
+asdfjfkdl;asldkfj
 " Relative Numbering
 if exists('+relativenumber')
     autocmd FocusLost * :set norelativenumber
