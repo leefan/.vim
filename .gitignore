@@ -1,3 +1,21 @@
-.netrwhist
+
+######################
+# Backup and Buffers #
+######################
 *.swp
-*.DS_Store
+
+##################
+# Resource Forks #
+##################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+########
+# Misc #
+########
+.netrwhist
