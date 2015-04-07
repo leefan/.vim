@@ -84,5 +84,6 @@ endif
 nnoremap <silent><F2> :GitGutterLineHightlightsToggle<cr>
 inoremap <silent><F2> <Esc> :GitGutterLineHightlightsToggle<cr>a
 
-nnoremap <silent><F11> :RainbowParenthesesToggle<cr>
-inoremap <silent><F11> <Esc>:RainbowParenthesesToggle<cr>a
+let g:rainbow_active = 0
+nnoremap <silent><F11> :RainbowToggle<cr>
+inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
