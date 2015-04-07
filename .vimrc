@@ -1,6 +1,7 @@
 set nocompatible
 
 " Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 let g:pathogen_disabled = []
 if v:version < '703'
     call add(g:pathogen_disabled, 'YouCompleteMe')
