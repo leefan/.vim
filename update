@@ -3,13 +3,13 @@
 cd ~/.vim && git pull --rebase origin/master
 ln -sfF ~/.vim/.vimrc ~/.vimrc
 
-if ["$1" != "basic"]; then
+if [ "$1" != "basic" ]; then
     cd ~/.vim && git submodule update --init --recursive
     cd ~/.vim && git submodule foreach git checkout master
     cd ~/.vim && git submodule foreach git pull
 fi
 
-if ["$1" = "install"]; then
+if [ "$1" = "install" ]; then
     cd ~/.vim/bundle/vimproc.vim && make
     cd ~/.vim/bundle/YouCompleteMe && ./install.sh
 fi
