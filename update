@@ -1,6 +1,6 @@
 #! /bin/sh
 
-cd ~/.vim && git pull --rebase origin/master
+cd ~/.vim && git pull --rebase origin master
 ln -sfF ~/.vim/.vimrc ~/.vimrc
 
 if [ "$1" != "basic" ]; then
