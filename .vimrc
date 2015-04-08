@@ -52,7 +52,6 @@ set wildmode=list:longest           " When more than one match with tab completi
 set autoindent                      " automatically indents. pretty straight forward
 set fdm=syntax                      " set folding to base off of syntax
 
-asdfjfkdl;asldkfj
 " Relative Numbering
 if exists('+relativenumber')
     autocmd FocusLost * :set norelativenumber
