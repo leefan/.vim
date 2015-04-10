@@ -1,4 +1,5 @@
 set nocompatible
+set t_Co=256
 
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
