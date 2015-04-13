@@ -7,7 +7,8 @@ let g:pathogen_disabled = []
 if v:version < '703'
     call add(g:pathogen_disabled, 'vimshell.vim')
     call add(g:pathogen_disabled, 'gundo.vim')
-elseif v:version < '704'
+endif
+if v:version < '704'
     if !has('patch584')
         call add(g:pathogen_disabled, 'YouCompleteMe')
     endif
