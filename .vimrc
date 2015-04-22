@@ -82,21 +82,30 @@ nnoremap k gk
 " sudo and save with w!!
 cmap w!! w !sudo tee % >/dev/null
 
-" Bundle Settings
+
+"""""""""""""""""""
+" Bundle Settings "
+"""""""""""""""""""
+
+" vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 
+" ack.vim
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
+" vim-gitgutter
 nnoremap <silent><F2> :GitGutterLineHightlightsToggle<cr>
 inoremap <silent><F2> <Esc>:GitGutterLineHightlightsToggle<cr>a
 
+" rainbow
 let g:rainbow_active = 0
 nnoremap <silent><F11> :RainbowToggle<cr>
 inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
 
+" gundo.vim
 nnoremap <F5> :GundoToggle<CR>
 inoremap <F5> <Esc>:GundoToggle<CR>
