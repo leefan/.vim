@@ -13,7 +13,7 @@ if v:version < '704'
         call add(g:pathogen_disabled, 'YouCompleteMe')
     endif
 endif
-if hostname() == 'www.leefan.com'
+if hostname() == 'leefan.com'
     call add(g:pathogen_disabled, 'YouCompleteMe')
 endif
 call pathogen#helptags()
