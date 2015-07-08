@@ -108,6 +108,10 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
+" ctrlp.vim
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+
 " rainbow
 let g:rainbow_active = 0
 nnoremap <silent><F11> :RainbowToggle<cr>
