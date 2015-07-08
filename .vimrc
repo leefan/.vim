@@ -34,6 +34,8 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+let mapleader=' '
+
 " Basic Options
 set shell=bash                      " set internal shell to bash
 set bg=dark                         " use dark style
@@ -71,6 +73,11 @@ if exists('+relativenumber')
     autocmd InsertLeave * :set relativenumber
 endif
 
+" Paste mode toggling
+if exists('+invpaste')
+    map <F2> :set invpaste<cr>
+endif
+
 " Syntax
 filetype plugin indent on
 syntax on
@@ -81,6 +88,7 @@ highlight Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
 " Control
 nnoremap j gj
 nnoremap k gk
+" autocmd CompleteDone * pclose   " close preview window when unnecessary
 
 " sudo and save with w!!
 cmap w!! w !sudo tee % >/dev/null
@@ -99,10 +107,6 @@ let g:airline#extensions#tabline#enabled = 1
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
-
-" vim-gitgutter
-nnoremap <silent><F2> :GitGutterLineHightlightsToggle<cr>
-inoremap <silent><F2> <Esc>:GitGutterLineHightlightsToggle<cr>a
 
 " rainbow
 let g:rainbow_active = 0
