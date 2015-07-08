@@ -59,9 +59,10 @@ set laststatus=2                    " show status menu for all windows
 set wildmode=list:longest           " When more than one match with tab completion, list all matches and complete till longest common string
 set autoindent                      " automatically indents. pretty straight forward
 set ttimeoutlen=0                   " remove key code delay
+set pastetoggle=<F2>                " paste toggling
 
 if exists('+fdm')
-    set fdm=syntax                      " set folding to base off of syntax
+set fdm=syntax                      " set folding to base off of syntax
 endif
 
 " Relative Numbering
@@ -70,11 +71,6 @@ if exists('+relativenumber')
     autocmd FocusGained * :set relativenumber
     autocmd InsertEnter * :set norelativenumber
     autocmd InsertLeave * :set relativenumber
-endif
-
-" Paste mode toggling
-if exists('+invpaste')
-    map <F2> :set invpaste<cr>
 endif
 
 " Syntax
