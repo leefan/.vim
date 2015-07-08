@@ -34,8 +34,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-let mapleader=' '
-
 " Basic Options
 set shell=bash                      " set internal shell to bash
 set bg=dark                         " use dark style
@@ -60,6 +58,7 @@ set ruler                           " show line and column number of cursor posi
 set laststatus=2                    " show status menu for all windows
 set wildmode=list:longest           " When more than one match with tab completion, list all matches and complete till longest common string
 set autoindent                      " automatically indents. pretty straight forward
+set ttimeoutlen=0                   " remove key code delay
 
 if exists('+fdm')
     set fdm=syntax                      " set folding to base off of syntax
