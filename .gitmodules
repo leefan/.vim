@@ -67,3 +67,6 @@
 [submodule "bundle/tmux.vim"]
 	path = bundle/tmux.vim
 	url = https://github.com/zaiste/tmux.vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

@@ -83,7 +83,6 @@ highlight Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
 " Control
 nnoremap j gj
 nnoremap k gk
-" autocmd CompleteDone * pclose   " close preview window when unnecessary
 
 " sudo and save with w!!
 cmap w!! w !sudo tee % >/dev/null
@@ -115,3 +114,6 @@ inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
 " gundo.vim
 nnoremap <F5> :GundoToggle<CR>
 inoremap <F5> <Esc>:GundoToggle<CR>
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
