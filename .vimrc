@@ -36,7 +36,6 @@ vnoremap <F1> <ESC>
 
 " Basic Options
 set shell=bash                      " set internal shell to bash
-set bg=dark                         " use dark style
 set expandtab                       " inserts space characters instead of tab
 set tabstop=4                       " show tab as 4 spaces
 set shiftwidth=4                    " inserts 4 space characters for tab
@@ -66,19 +65,40 @@ set fdm=syntax                      " set folding to base off of syntax
 endif
 
 " Relative Numbering
+function! SetCursorLine()
+    hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+    set cursorline
+endfunction
 if exists('+relativenumber')
-    autocmd FocusLost * :set norelativenumber
-    autocmd FocusGained * :set relativenumber
-    autocmd InsertEnter * :set norelativenumber
-    autocmd InsertLeave * :set relativenumber
+    augroup relativeNumber
+        autocmd!
+        autocmd FocusLost * :set norelativenumber
+        autocmd FocusGained * :set relativenumber
+        autocmd InsertEnter * :set norelativenumber
+        autocmd InsertLeave * :set relativenumber
+    augroup END
 endif
 
 " Syntax
 filetype plugin indent on
 syntax on
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
 
 " Color Options
+colorscheme ron
 highlight Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
+augroup modecolor
+    autocmd!
+    autocmd InsertEnter * :execute 'hi CursorLineNr ctermbg='.g:airline#themes#molokai#palette['insert']['airline_z'][3]
+    autocmd InsertLeave * :execute 'hi CursorLineNr ctermbg='.g:airline#themes#molokai#palette['normal']['airline_z'][3]
+augroup END
 
 " Control
 nnoremap j gj
