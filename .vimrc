@@ -65,11 +65,8 @@ set fdm=syntax                      " set folding to base off of syntax
 endif
 
 " Relative Numbering
-function! SetCursorLine()
-    hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-    set cursorline
-endfunction
 if exists('+relativenumber')
+    set relativenumber
     augroup relativeNumber
         autocmd!
         autocmd FocusLost * :set norelativenumber
@@ -94,11 +91,14 @@ augroup END
 " Color Options
 colorscheme ron
 highlight Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
-augroup modecolor
-    autocmd!
-    autocmd InsertEnter * :execute 'hi CursorLineNr ctermbg='.g:airline#themes#molokai#palette['insert']['airline_z'][3]
-    autocmd InsertLeave * :execute 'hi CursorLineNr ctermbg='.g:airline#themes#molokai#palette['normal']['airline_z'][3]
-augroup END
+function! ClearCursorLine()
+    hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+    set cursorline
+endfunction
+function! SetCursorLineNr(ctermbg)
+    execute 'hi CursorLineNr cterm=bold ctermfg=0 ctermbg='.a:ctermbg
+    call ClearCursorLine()
+endfunction
 
 " Control
 nnoremap j gj
@@ -116,6 +116,12 @@ cmap w!! w !sudo tee % >/dev/null
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
+call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
+augroup modecolor
+    autocmd!
+    autocmd InsertEnter * :call SetCursorLineNr(g:airline#themes#molokai#palette['insert']['airline_z'][3])
+    autocmd InsertLeave * :call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
+augroup END
 
 " ack.vim
 if executable('ag')
