@@ -68,7 +68,7 @@ endif
 if exists('+relativenumber')
     set relativenumber
     augroup relativeNumber
-        " autocmd!
+        autocmd!
         autocmd FocusLost * :set norelativenumber
         autocmd FocusGained * :set relativenumber
         autocmd InsertEnter * :set norelativenumber
@@ -118,7 +118,7 @@ let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
 augroup modecolor
-    " autocmd!
+    autocmd!
     autocmd InsertEnter * :call SetCursorLineNr(g:airline#themes#molokai#palette['insert']['airline_z'][3])
     autocmd InsertLeave * :call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
 augroup END
