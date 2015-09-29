@@ -12,4 +12,5 @@ fi
 if [ "$1" = "install" ]; then
     cd ~/.vim/bundle/vimproc.vim && make
     cd ~/.vim/bundle/YouCompleteMe && ./install.py
+    CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments cd ~/.vim/bundle/ctrlp-cmatcher && ./install.sh
 fi

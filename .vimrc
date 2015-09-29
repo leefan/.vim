@@ -131,6 +131,7 @@ endif
 " ctrlp.vim
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " rainbow
 let g:rainbow_active = 0
