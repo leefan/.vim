@@ -116,6 +116,7 @@ cmap w!! w !sudo tee % >/dev/null
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 2 " splits and tab number
 call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
 augroup modecolor
     autocmd!
@@ -132,6 +133,7 @@ endif
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_lazy_update=1
 
 " rainbow
 let g:rainbow_active = 0
