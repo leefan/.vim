@@ -2,8 +2,8 @@
 
 cd ~/.vim && git pull --rebase origin master
 ln -sfF ~/.vim/.vimrc ~/.vimrc
+ln -sfF ~/.vim/.vimrc ~/.vim/init.vim
 ln -sfF ~/.vim ~/.config/nvim
-ln -sfF ~/.vim/.vimrc ~/.config/nvim/init.vim
 
 if [ "$1" != "basic" ]; then
     cd ~/.vim && git submodule update --init --recursive
