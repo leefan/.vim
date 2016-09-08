@@ -8,14 +8,6 @@ if v:version < '703'
     call add(g:pathogen_disabled, 'vimshell.vim')
     call add(g:pathogen_disabled, 'gundo.vim')
 endif
-if v:version < '704'
-    if !has('patch584')
-        call add(g:pathogen_disabled, 'YouCompleteMe')
-    endif
-endif
-if hostname() == 'leefan.com'
-    call add(g:pathogen_disabled, 'YouCompleteMe')
-endif
 call pathogen#helptags()
 call pathogen#infect()
 
@@ -78,6 +70,7 @@ endif
 
 " Syntax
 filetype plugin indent on
+let g:php_folding=2
 syntax on
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
@@ -143,6 +136,10 @@ inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
 " gundo.vim
 nnoremap <F5> :GundoToggle<CR>
 inoremap <F5> <Esc>:GundoToggle<CR>
+
+" vim-snipmate
+imap <C-Space> <Plug>snipMateNextOrTrigger
+smap <C-Space> <Plug>snipMateNextOrTrigger
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
