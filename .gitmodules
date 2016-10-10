@@ -85,6 +85,3 @@
 [submodule "bundle/bootstrap-snippets"]
 	path = bundle/bootstrap-snippets
 	url = https://github.com/bonsaiben/bootstrap-snippets.git
-[submodule "codi.vim"]
-	path = codi.vim
-	url = https://github.com/metakirby5/codi.vim.git
