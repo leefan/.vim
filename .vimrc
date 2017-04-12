@@ -137,9 +137,11 @@ inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
 nnoremap <F5> :GundoToggle<CR>
 inoremap <F5> <Esc>:GundoToggle<CR>
 
+" vim-jsx
+let g:jsx_ext_required = 0
+
 " vim-signify
 let g:signify_vcs_list = ['git', 'hg']
-let g:signify_realtime = 1
 
 " vim-snipmate
 imap <C-Space> <Plug>snipMateNextOrTrigger
