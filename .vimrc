@@ -56,6 +56,7 @@ if executable('rg')
     set grepprg=rg\ --color-never
 elseif executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
+endif
 
 if exists('+fdm')
 set fdm=syntax                      " set folding to base off of syntax
