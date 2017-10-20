@@ -52,6 +52,11 @@ set autoindent                      " automatically indents. pretty straight for
 set ttimeoutlen=0                   " remove key code delay
 set pastetoggle=<F2>                " paste toggling
 
+if executable('rg')
+    set grepprg=rg\ --color-never
+elseif executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
 if exists('+fdm')
 set fdm=syntax                      " set folding to base off of syntax
 endif
@@ -118,7 +123,9 @@ augroup modecolor
 augroup END
 
 " ack.vim
-if executable('ag')
+if executable('rg')
+    let g:ackprg = 'rg --vimgrep'
+elseif executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
