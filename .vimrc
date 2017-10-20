@@ -53,7 +53,7 @@ set ttimeoutlen=0                   " remove key code delay
 set pastetoggle=<F2>                " paste toggling
 
 if executable('rg')
-    set grepprg=rg\ --color-never
+    set grepprg=rg\ --color=never
 elseif executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 endif
