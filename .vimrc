@@ -87,9 +87,13 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-" Color Options
+" Color and Styling Options
 colorscheme ron
-highlight Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
+hi Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
+hi LineNr ctermfg=246 ctermbg=234
+hi SignColumn ctermbg=234
+hi VertSplit ctermbg=67 ctermfg=67
+set fillchars+=vert:\ 
 function! ClearCursorLine()
     hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
     set cursorline
@@ -116,12 +120,18 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 2 " splits and tab number
+let g:airline#extensions#ale#enabled = 1
 call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
 augroup modecolor
     autocmd!
     autocmd InsertEnter * :call SetCursorLineNr(g:airline#themes#molokai#palette['insert']['airline_z'][3])
     autocmd InsertLeave * :call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
 augroup END
+
+" ale
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+hi ALEError ctermbg=88
 
 " ack.vim
 if executable('rg')
