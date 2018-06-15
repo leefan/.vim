@@ -29,8 +29,8 @@ vnoremap <F1> <ESC>
 " Basic Options
 set shell=bash                      " set internal shell to bash
 set expandtab                       " inserts space characters instead of tab
-set tabstop=4                       " show tab as 4 spaces
-set shiftwidth=4                    " inserts 4 space characters for tab
+set tabstop=2                       " show tab as 4 spaces
+set shiftwidth=2                    " inserts 4 space characters for tab
 set smarttab                        " Use 'shiftwidth' to insert tabs, <BS> removes a tab's worth
 set backspace=indent,eol,start      " allows backspacing over indent, line breaks, and start of inserts
 set number                          " show line number
@@ -95,7 +95,7 @@ hi SignColumn ctermbg=234
 hi VertSplit ctermbg=67 ctermfg=67
 set fillchars+=vert:\ 
 function! ClearCursorLine()
-    hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+    hi clear CursorLine
     set cursorline
 endfunction
 function! SetCursorLineNr(ctermbg)
@@ -146,6 +146,14 @@ let g:ctrlp_max_depth=40
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_lazy_update=1
+
+" emmet-vim
+let g:user_emmet_settings = { 'tsx' : { 'extends' : 'jsx' } }
+
+" indentLine
+let g:indentLine_enabled = 0
+nnoremap <silent><F10> :IndentLinesToggle<cr>
+inoremap <silent><F10> <Esc>:IndentLinesToggle<cr>a
 
 " rainbow
 let g:rainbow_active = 0
