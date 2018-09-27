@@ -5,13 +5,6 @@ ln -sfF ~/.vim/.vimrc ~/.vimrc
 # ln -sfF ~/.vim/.vimrc ~/.vim/init.vim
 # ln -sfF ~/.vim ~/.config/nvim
 
-if [ "$1" != "basic" ]; then
-    cd ~/.vim && git submodule update --init --recursive
-    cd ~/.vim && git submodule foreach git checkout master
-    cd ~/.vim && git submodule foreach git pull
-fi
-
-if [ "$1" = "install" ]; then
-    cd ~/.vim/bundle/vimproc.vim && make
-    CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments cd ~/.vim/bundle/ctrlp-cmatcher && ./install.sh
+if [ "$1" = "init" ]; then
+  cd ~/.vim && git clone https://github.com/k-takata/minpac.git pack/minipac/opt/minipac
 fi
