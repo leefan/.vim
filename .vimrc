@@ -131,6 +131,7 @@ augroup END
 " ale
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
+let g:ale_linters_ignore = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
 hi ALEError ctermbg=88
 
 " ack.vim
@@ -143,8 +144,12 @@ endif
 " ctrlp.vim
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+else
+  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+endif
+let g:ctrlp_use_caching=0
 let g:ctrlp_lazy_update=1
 
 " emmet-vim
