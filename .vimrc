@@ -19,7 +19,7 @@ function! PackInit() abort
   call minpac#add('christoomey/vim-tmux-navigator')
   call minpac#add('majutsushi/tagbar')
   call minpac#add('w0rp/ale')
-  call minpac#add('junegunn/fzf')
+  call minpac#add('junegunn/fzf.vim')
 
   " Version Control
   call minpac#add('mhinz/vim-signify')
@@ -204,7 +204,7 @@ nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""
 packloadall
 
-" vim-airline
+" vim-airline-themes
 let g:airline_theme='molokai'
 call SetCursorLineNr(g:airline#themes#molokai#palette['normal']['airline_z'][3])
 augroup modecolor
