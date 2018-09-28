@@ -12,7 +12,6 @@ function! PackInit() abort
   call minpac#add('bling/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
   call minpac#add('Yggdroot/indentLine')
-  call minpac#add('mileszs/ack.vim')
   call minpac#add('luochen1990/rainbow')
   call minpac#add('mattn/emmet-vim')
   call minpac#add('sjl/gundo.vim')
@@ -75,6 +74,12 @@ nnoremap <silent>* :set hls<cr>*
 nnoremap <silent># :set hls<cr>#
 nnoremap <silent>/ :set hls<cr>/
 nnoremap <silent>? :set hls<cr>?
+
+" completion settings
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Disable Help
 inoremap <F1> <ESC>
@@ -164,13 +169,6 @@ let g:ale_sign_warning = ''
 let g:ale_linters_ignore = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
 hi ALEError ctermbg=88
 
-" ack.vim
-if executable('rg')
-    let g:ackprg = 'rg --vimgrep'
-elseif executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
-
 " emmet-vim
 let g:user_emmet_settings = { 'tsx' : { 'extends' : 'jsx' } }
 
@@ -178,6 +176,15 @@ let g:user_emmet_settings = { 'tsx' : { 'extends' : 'jsx' } }
 if executable('fzf')
   set rtp+=/usr/local/opt/fzf
 endif
+nnoremap <C-p>p :Files<cr>
+nnoremap <C-p>g :GFiles<cr>
+nnoremap <C-p>r :Rg<cr>
+nnoremap <C-p>b :Buffers<cr>
+nnoremap <C-p>l :BLines<cr>
+nnoremap <C-p>/ :Lines<cr>
+imap <c-f> <plug>(fzf-complete-path)
+imap <c-j> <plug>(fzf-complete-file-ag)
+imap <c-l> <plug>(fzf-complete-line)
 
 " indentLine
 let g:indentLine_enabled = 0
