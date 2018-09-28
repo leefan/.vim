@@ -32,7 +32,7 @@ function! PackInit() abort
   call minpac#add('ianks/vim-tsx', {'type': 'opt'})
   call minpac#add('StanAngeloff/php.vim', {'type': 'opt'})
   call minpac#add('tpope/vim-git', {'type': 'opt'})
-  call minpac#add('dag/vim-fish', {'type': 'opt'})
+  call minpac#add('dag/vim-fish')
   call minpac#add('tmux-plugins/vim-tmux', {'type': 'opt'})
 endfunction
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -40,7 +40,6 @@ command! PackClean  call PackInit() | call minpac#clean()
 command! PackStatus call PackInit() | call minpac#status()
 
 " Basic Options
-set shell=bash                      " set internal shell to bash
 set expandtab                       " inserts space characters instead of tab
 set tabstop=2                       " show tab as 4 spaces
 set shiftwidth=2                    " inserts 4 space characters for tab
@@ -65,6 +64,22 @@ set autoindent                      " automatically indents. pretty straight for
 set ttimeoutlen=0                   " remove key code delay
 set pastetoggle=<F2>                " paste toggling
 
+if exists('+fdm')
+set fdm=syntax                      " set folding to base off of syntax
+endif
+
+if executable('rg')
+    set grepprg=rg\ --color=never
+elseif executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+if executable('fish')
+  set shell=fish
+else
+  set shell=bash
+endif
+
 " toggle highlighting search with F12
 nnoremap <silent><F12> :set hls!<cr>
 inoremap <silent><F12> <Esc>:set hls!<cr>a
@@ -85,16 +100,6 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvis
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
-if executable('rg')
-    set grepprg=rg\ --color=never
-elseif executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-endif
-
-if exists('+fdm')
-set fdm=syntax                      " set folding to base off of syntax
-endif
 
 " Relative Numbering
 if exists('+relativenumber')
@@ -120,7 +125,6 @@ augroup syntaxLazyLoad
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
   autocmd FileType php packadd php.vim
-  autocmd FileType fish packadd vim-fish
   autocmd FileType tmux packadd vim-tmux
   autocmd FileType git packadd vim-git
   autocmd FileType javascript packadd vim-javascript
