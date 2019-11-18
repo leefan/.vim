@@ -28,7 +28,7 @@ function! PackInit() abort
   " Language Support
   call minpac#add('pangloss/vim-javascript', {'type': 'opt'})
   call minpac#add('mxw/vim-jsx', {'type': 'opt'})
-  call minpac#add('leafgarland/typescript-vim', {'type': 'opt'})
+  call minpac#add('leafgarland/typescript-vim')
   call minpac#add('ianks/vim-tsx', {'type': 'opt'})
   call minpac#add('StanAngeloff/php.vim', {'type': 'opt'})
   call minpac#add('tpope/vim-git', {'type': 'opt'})
@@ -129,7 +129,6 @@ augroup syntaxLazyLoad
   autocmd FileType git packadd vim-git
   autocmd FileType javascript packadd vim-javascript
   autocmd FileType javascript packadd vim-jsx
-  autocmd FileType typescript packadd typescript-vim
   autocmd FileType typescript packadd vim-tsx
 augroup END
 
@@ -171,6 +170,8 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 let g:ale_linters_ignore = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
+let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'] }
+let g:ale_fix_on_save = 1
 hi ALEError ctermbg=88
 
 " emmet-vim
