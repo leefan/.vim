@@ -14,7 +14,7 @@ function! PackInit() abort
   call minpac#add('Yggdroot/indentLine')
   call minpac#add('luochen1990/rainbow')
   call minpac#add('mattn/emmet-vim')
-  call minpac#add('sjl/gundo.vim')
+  call minpac#add('simnalamburt/vim-mundo')
   call minpac#add('christoomey/vim-tmux-navigator')
   call minpac#add('majutsushi/tagbar')
   call minpac#add('w0rp/ale')
@@ -63,6 +63,8 @@ set wildmode=list:longest           " When more than one match with tab completi
 set autoindent                      " automatically indents. pretty straight forward
 set ttimeoutlen=0                   " remove key code delay
 set pastetoggle=<F2>                " paste toggling
+set undofile                        " persistent undo history across vim sessions
+set undodir=~/.vim/undo             " setting undo history file
 
 if exists('+fdm')
 set fdm=syntax                      " set folding to base off of syntax
@@ -202,8 +204,8 @@ nnoremap <silent><F11> :RainbowToggle<cr>
 inoremap <silent><F11> <Esc>:RainbowToggle<cr>a
 
 " gundo.vim
-nnoremap <F5> :GundoToggle<CR>
-inoremap <F5> <Esc>:GundoToggle<CR>
+nnoremap <F1> :MundoToggle<CR>
+inoremap <F1> <Esc>:MundoToggle<CR>
 
 " vim-signify
 let g:signify_vcs_list = ['git', 'hg']
