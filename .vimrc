@@ -34,6 +34,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-git', {'type': 'opt'})
   call minpac#add('dag/vim-fish')
   call minpac#add('tmux-plugins/vim-tmux', {'type': 'opt'})
+  call minpac#add('jparise/vim-graphql')
 endfunction
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  call PackInit() | call minpac#clean()
