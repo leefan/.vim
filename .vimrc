@@ -19,6 +19,7 @@ function! PackInit() abort
   call minpac#add('majutsushi/tagbar')
   call minpac#add('w0rp/ale')
   call minpac#add('junegunn/fzf.vim')
+  call minpac#add('junegunn/fzf')
 
   " Version Control
   call minpac#add('mhinz/vim-signify')
@@ -172,10 +173,17 @@ let g:airline#extensions#ale#enabled = 1
 " ale
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
-let g:ale_linters_ignore = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
 let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'] }
 let g:ale_fix_on_save = 1
 hi ALEError ctermbg=88
+nnoremap <C-g>g :ALEGoToDefinition<cr>
+nnoremap <C-g>t :ALEGoToDefinitionInTab<cr>
+nnoremap <C-g>s :ALEGoToDefinitionInSplit<cr>
+nnoremap <C-g>v :ALEGoToDefinitionInVSplit<cr>
+inoremap <C-g>g <Esc>:ALEGoToDefinition<cr>
+inoremap <C-g>t <Esc>:ALEGoToDefinitionInTab<cr>
+inoremap <C-g>s <Esc>:ALEGoToDefinitionInSplit<cr>
+inoremap <C-g>v <Esc>:ALEGoToDefinitionInVSplit<cr>
 
 " emmet-vim
 let g:user_emmet_settings = { 'tsx' : { 'extends' : 'jsx' } }
