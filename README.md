@@ -8,6 +8,10 @@ git clone git@github.com:leefan/.vim.git
 ```
 .vim/update init
 ```
+Within `vim`, run
+```
+:PackUpdate
+```
 ## Update
 To update, run:
 ```
