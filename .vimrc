@@ -137,7 +137,7 @@ augroup syntaxLazyLoad
 augroup END
 
 " Color and Styling Options
-colorscheme ron
+colorscheme slate
 hi Pmenu ctermfg=14 ctermbg=8 guifg=#ffffff guibg=#0000ff
 hi LineNr ctermfg=246 ctermbg=234
 hi SignColumn ctermbg=234
